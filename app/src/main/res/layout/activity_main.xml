@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pages.home.MainActivity">
+
+    <com.dragonforest.tablayoutlib.tablayout.ColorTrackTabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        app:ct_startScrollX="100dp"
+        app:ct_tabForeground="@drawable/ripper_colortrackitem"
+        app:ct_tabMode="fill"
+        app:ct_tabPadding="10dp"
+        app:ct_tabSelectScale="1.1"
+        app:ct_tabSelectTextColor="#ff0000"
+        app:ct_tabTextColor="@android:color/darker_gray"
+        app:ct_tabTextSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout"></androidx.viewpager.widget.ViewPager>
+</androidx.constraintlayout.widget.ConstraintLayout>
