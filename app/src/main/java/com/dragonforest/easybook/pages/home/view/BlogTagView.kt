@@ -20,10 +20,12 @@ class BlogTagView : LinearLayout {
         orientation = HORIZONTAL
     }
 
+    private var tagList: MutableList<String>? = null
     private var MAX_SIZE = 3
 
     fun setTags(tags: List<String>?) {
         if (tags == null) return
+        this.tagList = tags.toMutableList()
         removeAllViews()
         for (i in tags.indices) {
             if (i > MAX_SIZE) return
@@ -33,10 +35,14 @@ class BlogTagView : LinearLayout {
         }
     }
 
-    fun addTag(tag:String){
+    fun addTag(tag: String): Boolean {
+        if (tagList?.contains(tag) == true) {
+            return false
+        }
         var tv = TextView(context)
         setTextStyle(tv, tag)
         addView(tv)
+        return true
     }
 
     private fun setTextStyle(tv: TextView, s: String) {

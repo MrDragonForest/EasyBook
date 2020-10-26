@@ -50,6 +50,6 @@ class BlogMapper : BaseMapper<BlogModel, BlogEntity>() {
 
     private fun string2TagList(str: String?): MutableList<String>? {
         if (str == null) return null
-        return str.split(str, ",").toMutableList()
+        return str.split(",").toMutableList()
     }
 }

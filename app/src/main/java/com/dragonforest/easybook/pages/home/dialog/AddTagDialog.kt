@@ -50,6 +50,10 @@ class AddTagDialog : AlertDialog {
             ToastUtil.show(context, "标签不能为空！")
             return
         } else {
+            if (blogModel?.tagList?.contains(tag) == true) {
+                ToastUtil.show(context, "标签已经存在！")
+                return
+            }
             onSubmitListener?.onSubmit(tag)
             dismiss()
         }
